@@ -25,7 +25,7 @@ let bestDistance=Number(localStorage.getItem('breathingBest')||0),outfitIndex=Ma
 let reducedMotion=localStorage.getItem('breathingReducedMotion')==='1';
 let vibration=localStorage.getItem('breathingVibration')!=='0',queuedAction='',queuedActionUntil=0,officerJumpDelay=0,officerJump=0,jumpWindow=0;
 let cleanRunSeconds=0;
-let totalFent=Number(localStorage.getItem('breathingTotalFent')||0),fentBalance=Number(localStorage.getItem('breathingFentBalance')??totalFent),purchasedAppearances=new Set(JSON.parse(localStorage.getItem('breathingPurchasedAppearances')||'["classic"]')),tutorialSeen=localStorage.getItem('breathingTutorial')==='1';
+let totalFent=Number(localStorage.getItem('breathingTotalFent')||0),fentBalance=Math.max(0,Number(localStorage.getItem('breathingFentBalance')??totalFent)||0),purchasedAppearances=new Set(JSON.parse(localStorage.getItem('breathingPurchasedAppearances')||'["classic"]')),tutorialSeen=localStorage.getItem('breathingTutorial')==='1';purchasedAppearances.add('classic');if(!purchasedAppearances.has(outfits[outfitIndex].id))outfitIndex=0;
 let bestClean=Number(localStorage.getItem('breathingBestClean')||0),currentClean=0;
 const achievementDefs=[{id:'escape',name:'FIRST ESCAPE'},{id:'collector',name:'COLLECTOR · 50 FENT'},{id:'distance',name:'DISTANCE · 500M'},{id:'corner',name:'STREETWISE · FIRST TURN'}];
 let achievements=JSON.parse(localStorage.getItem('breathingAchievements')||'{}');
