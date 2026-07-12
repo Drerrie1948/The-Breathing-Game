@@ -46,6 +46,16 @@ button:active { transform:translateY(2px); }
 .controls { display:flex; gap:16px; margin-top:18px; color:#899194; font-size:8px; font-weight:900; letter-spacing:1px; }
 #game-over { align-items:center; text-align:center; background:#080b0de3; }
 #game-over h2 { font-family:Anton,sans-serif; font-size:70px; margin:0; line-height:1; }
+.breath-sign { position:relative; width:min(330px,84vw); margin:0 0 11px; padding:17px 112px 16px 18px; border:5px solid #2c2119; border-radius:3px; background:linear-gradient(165deg,#d8b779,#b98a4e); box-shadow:0 5px 0 #6e4b2d,0 17px 38px #000b,inset 0 0 0 2px #f0d49b55; transform:rotate(-1.4deg); animation:sign-drop .42s cubic-bezier(.2,.9,.3,1.25) both; }
+.breath-sign::before { content:""; position:absolute; inset:7px; border:1px solid #5c412877; pointer-events:none; }
+.sign-copy { position:relative; z-index:2; font-family:Anton,sans-serif; color:#171311; font-size:clamp(29px,8.5vw,42px); line-height:.9; letter-spacing:.5px; text-align:left; text-shadow:1px 1px #f3d39966; }
+.purple-fist { position:absolute; z-index:2; right:3px; bottom:-3px; width:116px; height:112px; overflow:visible; filter:drop-shadow(0 5px 2px #32134288); transform:rotate(5deg); }
+.fist-outline,.fist-thumb { fill:#8129a9; stroke:#2e103f; stroke-width:7; stroke-linejoin:round; }
+.fist-thumb { fill:#9e38c9; }
+.fist-highlight { fill:none; stroke:#d98af0; stroke-width:4; stroke-linecap:round; opacity:.55; }
+.sign-stick { position:absolute; z-index:-1; left:50%; top:96%; width:18px; height:80px; border:3px solid #342319; background:#8b6037; transform:translateX(-50%) rotate(1deg); box-shadow:4px 5px 10px #0008; }
+.failure-detail { position:relative; margin:10px 0 4px; padding:5px 10px; color:#ff8a57; border:1px solid #ff6a3244; background:#120b09cc; font-size:9px; font-weight:900; letter-spacing:1.8px; text-transform:uppercase; }
+@keyframes sign-drop { from { opacity:0; transform:translateY(-45px) rotate(-5deg) scale(.78); } to { opacity:1; transform:translateY(0) rotate(-1.4deg) scale(1); } }
 .result-best { margin:-10px 0 22px; padding:8px 12px; border:1px solid #ffffff22; background:#0a1115aa; color:#9da9ad; font-size:9px; font-weight:900; letter-spacing:1.5px; }
 .result-best strong { color:#ffcf45; margin-left:8px; }
 #pause-screen { align-items:center; text-align:center; background:#06090be8; }
