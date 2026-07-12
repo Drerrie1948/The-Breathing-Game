@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+    <meta name="theme-color" content="#101315" />
+    <title>The Breathing Game</title>
+    <link rel="manifest" href="manifest.webmanifest" />
+    <link rel="stylesheet" href="styles.css?v=23" />
+  </head>
+  <body>
+    <main id="game-shell">
+      <canvas id="game" aria-label="The Breathing Game"></canvas>
+
+      <section id="hud" aria-live="polite">
+        <div class="brand">THE BREATHING GAME</div>
+        <div class="stats">
+          <div><span id="score">0</span><small>meters</small></div>
+          <div class="pickup"><span class="syringe-icon">✦</span><span id="vials">0</span><small>FENT</small></div>
+          <button id="sound-button" class="sound-button" aria-label="Mute sound" title="Mute sound">♪</button>
+          <button id="pause-button" class="sound-button" aria-label="Pause game" title="Pause game">Ⅱ</button>
+        </div>
+        <div id="run-info">
+          <span id="level">LEVEL 1</span>
+          <span id="best-score">BEST 0m</span>
+          <span id="district">DOWNTOWN</span>
+          <span id="combo">COMBO ×1</span>
+          <span id="power-status"></span>
+          <span id="mission">MISSION: COLLECT 8 FENT · 0/8</span>
+        </div>
+      </section>
+
+      <section id="start-screen" class="panel visible">
+        <div class="eyebrow">ALARM TRIPPED. GET OUT.</div>
+        <h1>THE<br /><em>BREATHING</em><br />GAME</h1>
+        <p>Burst out of the store and stay ahead. Move between three positions, jump, slide, and take the right street before the officer closes in.</p>
+        <button id="start-button">START RUN</button>
+        <button id="outfit-button" class="secondary-button">PROGRESSION & OUTFITS</button>
+        <div class="controls"><span>← → MOVE</span><span>↑ JUMP</span><span>↓ SLIDE</span></div>
+      </section>
+
+      <section id="game-over" class="panel">
+        <div id="game-over-reason" class="eyebrow">YOU ARE OUT OF BREATH</div>
+        <h2><span id="final-score">0</span> m</h2>
+        <p>You collected <strong id="final-vials">0</strong> Fent.</p>
+        <div class="result-best">PERSONAL BEST <strong id="final-best">0 m</strong></div>
+        <button id="retry-button">RUN AGAIN</button>
+      </section>
+
+      <section id="pause-screen" class="panel">
+        <div class="eyebrow">CHASE PAUSED</div>
+        <h2>KEEP<br />BREATHING</h2>
+        <button id="resume-button">RESUME</button>
+        <button id="pause-restart-button" class="secondary-button">RESTART RUN</button>
+        <button id="motion-button" class="secondary-button">REDUCED MOTION: OFF</button>
+        <div class="settings-grid">
+          <label>MUSIC <input id="music-volume" type="range" min="0" max="100" value="42" /></label>
+          <label>EFFECTS <input id="sfx-volume" type="range" min="0" max="100" value="78" /></label>
+          <label>APE CALLS <input id="ape-volume" type="range" min="0" max="100" value="85" /></label>
+          <label><input id="vibration-setting" type="checkbox" checked /> VIBRATION</label>
+        </div>
+      </section>
+
+      <section id="tutorial-screen" class="panel meta-panel">
+        <div class="eyebrow">FIRST ESCAPE</div>
+        <h2>LEARN THE RUN</h2>
+        <div class="tutorial-grid">
+          <div><strong>↔</strong><span>SWIPE SIDEWAYS</span><small>Change position and choose streets.</small></div>
+          <div><strong>↑</strong><span>SWIPE UP</span><small>Jump low obstacles.</small></div>
+          <div><strong>↓</strong><span>SWIPE DOWN</span><small>Slide beneath gantries.</small></div>
+          <div><strong>✦</strong><span>COLLECT FENT</span><small>Build combos and unlock outfits.</small></div>
+        </div>
+        <button id="tutorial-go-button">START TRAINING RUN</button>
+        <button id="tutorial-skip-button" class="secondary-button">SKIP TUTORIAL</button>
+      </section>
+
+      <section id="progress-screen" class="panel meta-panel">
+        <div class="eyebrow">RUNNER PROFILE</div>
+        <h2>PROGRESSION</h2>
+        <div class="meta-stats"><span>BEST <strong id="meta-best">0m</strong></span><span>TOTAL FENT <strong id="meta-fent">0</strong></span></div>
+        <div class="meta-stats"><span>LONGEST CLEAN RUN <strong id="meta-clean">0m</strong></span></div>
+        <h3>OUTFITS</h3>
+        <div id="outfit-list" class="outfit-list"></div>
+        <h3>ACHIEVEMENTS</h3>
+        <div id="achievement-list" class="achievement-list"></div>
+        <p class="audio-credit">Vervet monkey recording: Roland McVicker / British Library, via Wikimedia Commons · CC BY 4.0.</p>
+        <button id="progress-close-button">BACK</button>
+      </section>
+
+      <div id="turn-warning" aria-live="assertive"><span id="turn-arrow">↔</span></div>
+      <div id="level-up" aria-live="assertive"><small>LEVEL UP</small><strong>LEVEL 2</strong><span>FASTER!</span></div>
+      <div id="countdown" aria-live="assertive"><small>ESCAPE!</small><strong>3</strong></div>
+      <div id="achievement-toast"><small>ACHIEVEMENT UNLOCKED</small><strong></strong></div>
+      <div id="move-toast"><small>PERFECT MOVE</small><strong></strong></div>
+      <div id="weather" aria-hidden="true"></div>
+      <div id="turn-mask" aria-hidden="true"></div>
+
+      <div id="rotate-note">Best played in portrait mode</div>
+    </main>
+    <script type="module" src="game3d.js?v=23"></script>
+  </body>
+</html>

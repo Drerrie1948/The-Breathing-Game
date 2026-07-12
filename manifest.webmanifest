@@ -1,0 +1,12 @@
+{
+  "name": "The Breathing Game",
+  "short_name": "Breathing",
+  "start_url": "./",
+  "display": "standalone",
+  "background_color": "#090b0c",
+  "theme_color": "#101315",
+  "orientation": "portrait",
+  "description": "A fast endless runner through a smoldering city.",
+  "categories": ["games", "action"],
+  "lang": "en"
+}

@@ -1,0 +1,7 @@
+{
+  "appId": "com.fictionalgames.breathinggame",
+  "appName": "The Breathing Game",
+  "webDir": ".",
+  "server": { "androidScheme": "https" },
+  "android": { "allowMixedContent": false, "backgroundColor": "#090b0c" }
+}
