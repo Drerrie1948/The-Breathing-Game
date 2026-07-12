@@ -6,7 +6,7 @@
     <meta name="theme-color" content="#101315" />
     <title>The Breathing Game</title>
     <link rel="manifest" href="manifest.webmanifest" />
-    <link rel="stylesheet" href="styles.css?v=27" />
+    <link rel="stylesheet" href="styles.css?v=28" />
   </head>
   <body>
     <main id="game-shell">
@@ -35,6 +35,7 @@
         <h1>THE<br /><em>BREATHING</em><br />GAME</h1>
         <p>Burst out of the store and stay ahead. Move between three positions, jump, slide, and take the right street before the officer closes in.</p>
         <button id="start-button">START RUN</button>
+        <button id="store-button" class="secondary-button">GORILLA STORE</button>
         <button id="outfit-button" class="secondary-button">PROGRESSION & OUTFITS</button>
         <div class="controls"><span>← → MOVE</span><span>↑ JUMP</span><span>↓ SLIDE</span></div>
       </section>
@@ -98,6 +99,21 @@
         <button id="progress-close-button">BACK</button>
       </section>
 
+      <section id="store-screen" class="panel meta-panel store-panel">
+        <div class="eyebrow">GORILLA STORE</div>
+        <h2>CHANGE THE APE</h2>
+        <div class="store-balance">FENT BALANCE <strong id="store-balance">0</strong><small>LIFETIME <span id="store-lifetime">0</span></small></div>
+        <div id="store-preview" class="store-preview classic">
+          <div class="store-preview-ape"></div>
+          <div class="preview-accessory"></div>
+          <div class="preview-floor"></div>
+        </div>
+        <div class="store-selection"><strong id="store-name">CLASSIC GORILLA</strong><span id="store-description">The original runner.</span></div>
+        <div id="store-list" class="store-list"></div>
+        <button id="store-action-button">EQUIPPED</button>
+        <button id="store-close-button" class="secondary-button">BACK TO MAIN MENU</button>
+      </section>
+
       <div id="turn-warning" aria-live="assertive"><span id="turn-arrow">↔</span></div>
       <div id="level-up" aria-live="assertive"><small>LEVEL UP</small><strong>LEVEL 2</strong><span>FASTER!</span></div>
       <div id="countdown" aria-live="assertive"><small>ESCAPE!</small><strong>3</strong></div>
@@ -108,6 +124,6 @@
 
       <div id="rotate-note">Best played in portrait mode</div>
     </main>
-    <script type="module" src="game3d.js?v=27"></script>
+    <script type="module" src="game3d.js?v=28"></script>
   </body>
 </html>
