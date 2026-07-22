@@ -1,5 +1,5 @@
-const CACHE='breathing-game-beta-v30';
-const FILES=['./','./index.html','./styles.css?v=30','./game3d.js?v=30','./manifest.webmanifest','./vendor/three.module.min.js','./assets/gorilla-run.png','./assets/officer-run-back.png','./assets/urban-obstacles.png','./assets/overhead-gantry.png','./assets/city-facades.png','./assets/convenience-store-escape.png','./assets/vervet-monkey-calls.mp3'];
+const CACHE='breathing-game-beta-v31';
+const FILES=['./','./index.html','./styles.css?v=31','./game3d.js?v=31','./manifest.webmanifest','./vendor/three.module.min.js','./assets/gorilla-run.png','./assets/officer-run-back.png','./assets/urban-obstacles.png','./assets/overhead-gantry.png','./assets/city-facades.png','./assets/convenience-store-escape.png','./assets/vervet-monkey-calls.mp3'];
 self.addEventListener('install',event=>event.waitUntil(caches.open(CACHE).then(cache=>cache.addAll(FILES)).then(()=>self.skipWaiting())));
 self.addEventListener('activate',event=>event.waitUntil(caches.keys().then(keys=>Promise.all(keys.filter(key=>key!==CACHE).map(key=>caches.delete(key)))).then(()=>self.clients.claim())));
 self.addEventListener('fetch',event=>{
